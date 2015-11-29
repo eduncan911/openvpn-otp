@@ -462,7 +462,6 @@ openvpn_plugin_func_v1 (openvpn_plugin_handle_t handle, const int type, const ch
   }
 
   /* get username/password from envp string array */
-  const char *username = get_env ("username", envp);
   const char *password = get_env ("password", envp);
   const char *ip = get_env ("untrusted_ip", envp);
   const char *port = get_env ("untrusted_port", envp);
