@@ -453,6 +453,14 @@ openvpn_plugin_open_v1 (unsigned int *type_mask, const char *argv[], const char 
 OPENVPN_EXPORT int
 openvpn_plugin_func_v1 (openvpn_plugin_handle_t handle, const int type, const char *argv[], const char *envp[])
 {
+
+  /* are we using certs or u/p? */
+  const char *username = get_env ("common_name", envp);
+  if ( strlen(username) == 0 ) {
+    /* cert's common_name was not found. look for username instead */
+    username = get_env ("username", envp);
+  }
+
   /* get username/password from envp string array */
   const char *username = get_env ("username", envp);
   const char *password = get_env ("password", envp);
