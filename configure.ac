@@ -19,7 +19,7 @@ AC_CHECK_HEADERS([inttypes.h netinet/in.h stdint.h string.h], [],
 	[AC_MSG_ERROR([Missing system headers])]   )
 AC_CHECK_HEADERS([openssl/evp.h openssl/hmac.h], [],
 	[AC_MSG_ERROR([OpenSSL headers missing])])
-AC_CHECK_HEADERS([openvpn/openvpn-plugin.h], [],
+AC_CHECK_HEADERS([openvpn-plugin.h], [],
 	[AC_MSG_ERROR([OpenVPN headers missing])])
 
 # Checks for typedefs, structures, and compiler characteristics.
@@ -36,7 +36,7 @@ AC_ARG_WITH(openvpn-plugin-dir,
 if ! test -z "$with_openvpn_plugin_dir"; then
     OPENVPN_PLUGIN_DIR="$with_openvpn_plugin_dir"
 else
-    OPENVPN_PLUGIN_DIR="${libdir}/openvpn"
+    OPENVPN_PLUGIN_DIR="${libdir}/openvpn/plugins"
 fi
 AC_SUBST(OPENVPN_PLUGIN_DIR)
 

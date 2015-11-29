@@ -12,7 +12,7 @@
 #include <openssl/evp.h>
 #include <openssl/hmac.h>
 
-#include "openvpn/openvpn-plugin.h"
+#include "openvpn-plugin.h"
 
 #include "base32.h"
 #include "hex.h"
